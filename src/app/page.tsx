@@ -10,7 +10,7 @@ export default function Home() {
     { title: "Todo List", icon: <FaTasks size={28} />, link: "/todo" },
     { title: "Intern", icon: <FaUserGraduate size={28} />, link: "/intern" },
     { title: "Time Table", icon: <FaStickyNote size={28} />, link: "/timetable" },
-    { title: "My Other", icon: <FaLayerGroup size={28} />, link: "/other" },
+    { title: "Special Notes", icon: <FaLayerGroup size={28} />, link: "/specialnotes" },
   ];
 
   return (
