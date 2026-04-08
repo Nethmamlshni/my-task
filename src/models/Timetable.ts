@@ -1,13 +1,21 @@
-import mongoose from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
-const TimetableSchema = new mongoose.Schema(
+export interface ITimetable extends Document {
+  day: string;
+  task: string;
+  time: string;
+  description: string;
+}
+
+const TimetableSchema: Schema = new Schema(
   {
-    day: String,     // Monday, Tuesday...
-    hour: String,    // 06:00, 07:00...
-    task: String,    // Task name
+    day: { type: String, required: true },
+    task: { type: String, required: true },
+    time: { type: String, required: true },        // ✅ MUST EXIST
+    description: { type: String, required: true }, // ✅ MUST EXIST
   },
   { timestamps: true }
 );
 
 export default mongoose.models.Timetable ||
-  mongoose.model("Timetable", TimetableSchema);
+  mongoose.model<ITimetable>("Timetable", TimetableSchema);
